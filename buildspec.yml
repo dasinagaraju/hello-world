@@ -8,3 +8,7 @@ phases:
     commands:
       - java -version
       - mvn package
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'target/my-web-app'
