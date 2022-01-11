@@ -2,13 +2,12 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      java: corretto8
+    commands:
+    - echo installing packages
+    - apt-get install -y java
+    - apt-get install -y maveen
+      
   build:
     commands:
       - java -version
-      - mvn package
-artifacts:
-  files:
-    - '**/*'
-  base-directory: 'target/my-web-app'
+      - mvn clean install package
